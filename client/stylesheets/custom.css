@@ -1,16 +1,59 @@
 #live-trades {
   background-color: green;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width:33%;
 }
 
 #upcoming-trades {
   background-color: orange;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width:33%;
 }
 
 #past-trades {
   /*background: grey radial-gradient(farthest-corner, grey 40%, red 100%);*/
   background-color: grey;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width:33%;
 }
 
 #mainAppRow {
   display: flex;
+  height:-webkit-calc(100vh - 64px);
+}
+
+#main-nav {
+  background: #466387 radial-gradient(circle, #466387 40%, #223b59 100%);
+  font-family: 'Starjhol', 'Starjedi', 'Roboto', 'Oswald', 'Open Sans', sans-serif;
+}
+
+#trade-block {
+  flex-basis: auto;
+  justify-content: center;
+  height: 100px;
+  display: flex;
+}
+
+#trade-item {
+  padding: 10 10 10 10;
+  background-color:rgb(255, 99, 71);
+  border-bottom-color: rgb(238, 238, 238);
+  flex-basis: 80%;
+  box-shadow: 2px 2px 10px black;
+}
+
+@font-face {
+  font-family:'Starjhol';
+  src:url('/fonts/Starjhol.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Starjedi';
+  src: url("/fonts/Starjedi.ttf") format('truetype');
 }
