@@ -12,26 +12,37 @@ Template.commentEdit.helpers({
 });
 
 Template.commentEdit.events({
-  'submit form': function(e, template) {
+  'submit form': function(e) {
     e.preventDefault();
 
-    var $body = $(e.target).find('[name=body]');
-    var comment = {
-      body: $body.val()
-    };
+    var currentCommentId = this._id;
 
-    var errors = {};
-    if (! comment.body) {
-      errors.body = "Please write some content";
-      return Session.set('commentEditErrors', errors);
+    var commentProperties = {
+      url: $(e.target).find('[name=url]').val(),
+      title: $(e.target).find('[name=title]').val()
     }
 
-    Meteor.call('commentEdit', comment, function(error, commentId) {
-      if (error){
+    var errors = validatecomment(commentProperties);
+    if (errors.title || errors.url)
+      return Session.set('commentEditErrors', errors);
+
+    Comments.update(currentCommentId, {$set: commentProperties}, function(error) {
+      if (error) {
+        // display the error to the user
         throwError(error.reason);
       } else {
-        $body.val('');
+        Router.go('CommentPage', {_id: currentCommentId});
       }
     });
+  },
+
+  'click .delete': function(e) {
+    e.preventDefault();
+
+    if (confirm("Delete this Comment?")) {
+      var currentCommentId = this._id;
+      Comments.remove(currentCommentId);
+      Router.go('home');
+    }
   }
 });
