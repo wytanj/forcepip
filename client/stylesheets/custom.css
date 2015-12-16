@@ -48,6 +48,10 @@
   flex-basis: 80%;
   box-shadow: 2px 2px 10px black;
 }
+#login-dropdown-list {
+    top: 10px !important;
+    left: 21px !important;
+}
 
 @font-face {
   font-family:'Starjhol';
