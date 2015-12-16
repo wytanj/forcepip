@@ -1,0 +1,10 @@
+<template name="layout">
+  <span>hello</span>
+  <div class="container">
+    {{> header}}
+    {{> errors}}
+    <div id="main">
+        {{> yield}}
+    </div>
+  </div>
+</template>
