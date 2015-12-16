@@ -7,5 +7,10 @@
 }
 
 #past-trades {
+  /*background: grey radial-gradient(farthest-corner, grey 40%, red 100%);*/
   background-color: grey;
+}
+
+#mainAppRow {
+  display: flex;
 }
