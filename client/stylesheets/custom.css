@@ -1,0 +1,11 @@
+#live-trades {
+  background-color: green;
+}
+
+#upcoming-trades {
+  background-color: orange;
+}
+
+#past-trades {
+  background-color: grey;
+}
