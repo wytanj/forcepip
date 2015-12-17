@@ -16,14 +16,15 @@ Template.commentEdit.events({
     e.preventDefault();
 
     var currentCommentId = this._id;
+    var $body = $(e.target).find('[name=body]');
 
     var commentProperties = {
-      url: $(e.target).find('[name=url]').val(),
-      title: $(e.target).find('[name=title]').val()
-    }
+      body: $body.val(),
+      commentId: template.data._id
+    };
 
     var errors = validatecomment(commentProperties);
-    if (errors.title || errors.url)
+    if (!commentProperties.body)
       return Session.set('commentEditErrors', errors);
 
     Comments.update(currentCommentId, {$set: commentProperties}, function(error) {
