@@ -5,18 +5,34 @@
     });
   </script>
   <div class="row">
-    <form class="col s12">
+<script id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#f44336" data-apps="JTdCJTIyZW1haWwlMjI6JTIyd3l0YW5qQGdtYWlsLmNvbSUyMiU3RA=="></script>
+    <form class="col s12" action="#">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+          <input placeholder='Trigger Price' id="triggerPrice" type="number" class="validate">
+          <label for="triggerPrice"></label>
         </div>
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
+          <p>
+            <input name="group1" type="radio" id="test1" />
+            <label for="test1">Buy</label>
+          </p>
+          <p>
+            <input name="group1" type="radio" id="test2" />
+            <label for="test2">Sell</label>
+          </p>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder='Stop Loss' id="stopLoss" type="number" class="validate">
+          <label for="stopLoss"></label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder='Take Profit' id="takeProfit" type="number" class="validate">
+          <label for="takeProfit"></label>
         </div>
           <div class="input-field col s12">
-          <select multiple>
+            <select>
+              <option value="" disabled selected>Instruments</option>
             <optgroup label="Major Pairs">
               <option value="EUR_USD">EUR/USD</option>
               <option value="EUR_GBP">EUR/GBP</option>
@@ -30,41 +46,67 @@
               <option value="GBP_JPY">GBP/JPY</option>
             </optgroup>
             <optgroup label="Euro Pairs">
-              <option value="3">Option 3</option>
-              <option value="4">Option 4</option>
+              <option value="EUR_AUD">EUR_AUD</option>
+              <option value="EUR_CAD">EUR_CAD</option>
+              <option value="EUR_CZK">EUR_CZK</option>
+              <option value="EUR_DKK">EUR_DKK</option>
+              <option value="EUR_HUF">EUR_HUF</option>
+              <option value="EUR_NOK">EUR_NOK</option>
+              <option value="EUR_NZD">EUR_NZD</option>
+              <option value="EUR_PLN">EUR_PLN</option>
+              <option value="EUR_SEK">EUR_SEK</option>
+              <option value="EUR_TRY">EUR_TRY</option>
+              <option value="EUR_SGD">EUR_SGD</option>
+              <option value="EUR_ZAR">EUR_ZAR</option>
             </optgroup>
             <optgroup label="USD Pairs">
-              <option value="3">Option 3</option>
-              <option value="4">Option 4</option>
+              <option value="USD_CZK">USD_CZK</option>
+              <option value="USD_DKK">USD_DKK</option>
+              <option value="USD_HKD">USD_HKD</option>
+              <option value="USD_HUF">USD_HUF</option>
+              <option value="USD_INR">USD_INR</option>
+              <option value="USD_MXN">USD_MXN</option>
+              <option value="USD_NOK">USD_NOK</option>
+              <option value="USD_PLN">USD_PLN</option>
+              <option value="USD_SAR">USD_SAR</option>
+              <option value="USD_SEK">USD_SEK</option>
+              <option value="USD_SGD">USD_SGD</option>
+              <option value="USD_THB">USD_THB</option>
+              <option value="USD_TRY">USD_TRY</option>
+              <option value="USD_ZAR">USD_ZAR</option>
             </optgroup>
             <optgroup label="Other Pairs">
-              <option value="3">Option 3</option>
-              <option value="4">Option 4</option>
+              <option value="GBP_AUD">GBP_AUD</option>
+              <option value="GBP_CAD">GBP_CAD</option>
+              <option value="GBP_CHF">GBP_CHF</option>
+              <option value="GBP_NZD">GBP_NZD</option>
+              <option value="GBP_ZAR">GBP_ZAR</option>
+              <option value="GBP_PLN">GBP_PLN</option>
+              <option value="GBP_SGD">GBP_SGD</option>
+              <option value="AUD_CAD">AUD_CAD</option>
+              <option value="AUD_JPY">AUD_JPY</option>
+              <option value="AUD_NZD">AUD_NZD</option>
+              <option value="AUD_SGD">AUD_SGD</option>
+              <option value="CAD_CHF">CAD_CHF</option>
+              <option value="CAD_JPY">CAD_JPY</option>
+              <option value="CAD_SGD">CAD_SGD</option>
+              <option value="CHF_JPY">CHF_JPY</option>
+              <option value="CHF_ZAR">CHF_ZAR</option>
+              <option value="NZD_CAD">NZD_CAD</option>
+              <option value="NZD_JPY">NZD_JPY</option>
+              <option value="NZD_USD">NZD_USD</option>
+              <option value="NZD_SGD">NZD_SGD</option>
+              <option value="SGD_JPY">SGD_JPY</option>
+              <option value="TRY_JPY">TRY_JPY</option>
+              <option value="ZAR_JPY">ZAR_JPY</option>
             </optgroup>
             <optgroup label="Metals">
-              <option value="3">Option 3</option>
-              <option value="4">Option 4</option>
+              <option value="XAG_JPY">XAG_JPY</option>
+              <option value="XAG_USD">XAG_USD</option>
+              <option value="XAU_JPY">XAU_JPY</option>
+              <option value="XAU_USD">XAU_USD</option>
             </optgroup>
           </select>
-          <label>Currency Pairs</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input disabled value="" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
         </div>
       </div>
     </form>
