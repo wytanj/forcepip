@@ -21,8 +21,14 @@ Template.adminCreateTrade.events({
       buysell: $(e.target).find('[name=buysell]').val(),
       stopLoss: $(e.target).find('[name=stopLoss]').val(),
       takeProfit: $(e.target).find('[name=takeProfit]').val(),
-      instrument: $(e.target).find('[name=instrument]').val(),
-
+      instrument: $(e.target).find('[name=instrument]').val()
     }
+
+    Meteor.call('tradeInsert', tradeProperties, function (error, result) {
+      if(error)
+        return throwError(error.reason)
+      window.alert('trade created');
+      Router.go('home')
+    })
   }
 })
