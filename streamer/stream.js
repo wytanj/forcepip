@@ -1,5 +1,5 @@
 // var app = require('http').createServer(handler);
-// var io = require('socket.io').listen(app);
+// var tradesocket = io('https://path-goes-here');
 // var fs = require('fs');
 // var last;
 // var tick;

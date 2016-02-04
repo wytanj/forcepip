@@ -25,7 +25,8 @@
 
 #mainAppRow {
   display: flex;
-  height:-webkit-calc(100vh - 64px);
+  /*height:-webkit-calc(100vh - 64px);*/
+  height: 100%;
 }
 
 #main-nav {

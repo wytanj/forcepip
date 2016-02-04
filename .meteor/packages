@@ -26,3 +26,4 @@ accounts-password
 accounts-ui
 http
 joncursi:socket-io-client
+bozhao:link-accounts
